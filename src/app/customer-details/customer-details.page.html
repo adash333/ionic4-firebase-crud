@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>CustomerDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item><label>Name: </label>{{customer.name}}</ion-item>
+    <ion-item><label>Age: </label>{{customer.age}}</ion-item>
+    <ion-item><label>Active: </label>{{customer.active}}</ion-item>
+  </ion-list>
+ 
+  <ion-button color="primary" *ngIf='customer.active' (click)='updateActive(false)'>Inactive</ion-button>
+ 
+  <ion-button color="primary" *ngIf='!customer.active' (click)='updateActive(true)'>Active</ion-button>
+ 
+  <ion-button expand="block" color="danger" (click)='deleteCustomer()'>Delete</ion-button>
+ 
+</ion-content>
